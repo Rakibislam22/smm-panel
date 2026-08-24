@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Parkinsans } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} ${parkinsans.variable} scroll-smooth`}>
       <body className="min-h-full flex flex-col antialiased bg-white text-ink-900">
+        <SmoothScroll />
         {children}
       </body>
     </html>
