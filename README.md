@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SMM Panel Landing Page
 
-## Getting Started
+A responsive marketing landing page for TrendEvo, built with Next.js, React, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Features
+
+- Responsive hero, services, stats, process, payments, growth, advantages, FAQ, CTA, and footer sections
+- Locally served assets from `public/assets`
+- Parkinsans for headings and Inter for body text
+- Motion effects with Framer Motion
+- Inertial scrolling with Lenis, initialized after the page becomes idle to avoid first-load scroll jank
+
+## Requirements
+
+- Node.js `20.9.0` or later
+- npm (included with Node.js)
+
+## Setup
+
+1. Clone the repository and enter the project directory.
+
+   ```bash
+   git clone https://github.com/Rakibislam22/smm-panel.git
+   cd smm-panel
+   ```
+
+2. Install dependencies.
+
+   ```bash
+   npm install
+   ```
+
+## Run locally
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser. Changes to files under `src/` are applied automatically during development.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the production server after a successful build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Available scripts
 
-## Deploy on Vercel
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Starts the development server. |
+| `npm run build` | Creates an optimized production build and runs TypeScript checks. |
+| `npm run start` | Starts the production server after building. |
+| `npm run lint` | Runs ESLint checks. |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+  app/           # App Router layout, page, and global styles
+  components/    # Reusable landing-page sections and UI components
+  data/          # Landing-page content data
+public/assets/   # Images and SVG assets used by the page
+```

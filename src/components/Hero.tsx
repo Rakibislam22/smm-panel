@@ -38,7 +38,7 @@ export default function Hero() {
                     </div>
 
                     {/* Main Headline */}
-                    <h1 className="text-3xl sm:text-4xl lg:text-[2.9rem] font-bold leading-[1.15] tracking-tight text-gray-900">
+                    <h1 className="text-2xl sm:text-4xl lg:text-[2.9rem] font-bold leading-[1.15] tracking-tight text-gray-900">
                         <span className="text-orange-500">Best SMM Panel</span>
                         <br />
                         in Bangladesh – <span className="text-orange-500">Fast ,Safe</span> &amp;
