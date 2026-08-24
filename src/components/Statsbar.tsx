@@ -1,16 +1,31 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 import { heroStats } from "@/data/content";
 
 export default function StatsBar() {
     return (
-        <section className="bg-[#f7f7f9] py-16">
-            <div className="container-px mx-auto grid max-w-[1400px] grid-cols-2 gap-5 lg:grid-cols-4">
+        <section className="bg-[#f8f9fa] py-16 lg:py-20">
+            <div className="container px-4 mx-auto grid max-w-[1400px] grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
                 {heroStats.map((s, i) => (
                     <Reveal key={s.label} delay={i * 0.08}>
-                        <div className="card-hover h-full rounded-xl border border-black/5 bg-white p-5 text-center shadow-[0_5px_15px_-7px_rgba(0,0,0,0.16)] lg:p-7">
-                            <div className="mb-3 text-3xl">{s.icon}</div>
-                            <div className="text-xl font-extrabold text-ink-900 lg:text-2xl">{s.value}</div>
-                            <div className="mt-1 text-xs font-semibold text-brand-500">{s.label}</div>
+                        <div className="flex flex-col items-center justify-center h-full rounded-2xl bg-white p-8 text-center shadow-[0_12px_40px_-12px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-1">
+                            <Image
+                                src={s.icon}
+                                alt={s.label}
+                                width={80}
+                                height={80}
+                                className="mb-4 h-20 w-20 object-contain"
+                            />
+
+                            {/* Value */}
+                            <div className="text-[28px] font-extrabold text-gray-900 tracking-tight lg:text-[32px]">
+                                {s.value}
+                            </div>
+
+                            {/* Label */}
+                            <div className="mt-2 text-[15px] font-semibold text-orange-500">
+                                {s.label}
+                            </div>
                         </div>
                     </Reveal>
                 ))}
