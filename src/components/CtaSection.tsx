@@ -1,0 +1,6 @@
+import Image from "next/image";
+import Reveal from "./Reveal";
+
+export default function CtaSection() {
+  return <section id="contact" className="bg-white pb-20"><Reveal className="container-px mx-auto max-w-6xl"><div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-50 via-[#fff7ef] to-brand-100 px-7 py-8 sm:px-12 sm:py-10"><Image src="/assets/maph.png" alt="" fill className="object-cover opacity-[0.08]" /><div className="relative max-w-md"><h2 className="text-2xl font-extrabold text-ink-900">Ready to Grow Your Social Media in <span className="text-brand-500">Bangladesh?</span></h2><p className="mt-3 text-sm leading-relaxed text-ink-500">Join thousands of creators, businesses, and agencies growing with safe, reliable social media services.</p><div className="mt-6 flex flex-wrap gap-3"><a href="#signup" className="btn-outline !px-5 !py-2.5 text-sm">See All Services</a><a href="#signup" className="btn-primary !px-5 !py-2.5 text-sm">Create Free Account</a></div></div><Image src="/assets/cta-woman.png" alt="TrendEvo specialist" width={240} height={260} className="absolute bottom-0 right-5 hidden h-[235px] w-auto object-contain sm:block" /></div></Reveal></section>;
+}
