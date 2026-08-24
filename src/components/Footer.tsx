@@ -1,0 +1,7 @@
+import { footerLinks } from "@/data/content";
+
+export default function Footer() {
+  return <footer className="bg-gradient-to-br from-[#b74408] to-[#8e2a05] py-14 text-white"><div className="container-px mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4"><div><div className="inline-block rounded bg-white px-4 py-2 text-sm font-extrabold text-ink-900">TREND<span className="text-brand-500">EVO</span></div><p className="mt-5 max-w-xs text-xs leading-relaxed text-white/75">Best SMM panel in Bangladesh for creators, businesses, and agencies. Safe growth, simple ordering, and reliable delivery.</p></div><FooterColumn title="Quick Links" links={footerLinks.quick} /><FooterColumn title="Services Pages" links={footerLinks.services} /><div><h2 className="text-sm font-bold">Contact Info</h2><ul className="mt-4 space-y-2 text-xs text-white/75"><li>info@trendevo.com</li><li>+880 123 456 7890</li><li>Serving all of Bangladesh</li><li>Support 24/7</li></ul></div></div><div className="container-px mx-auto mt-10 max-w-6xl border-t border-white/15 pt-5 text-center text-[11px] text-white/60">Copyright 2026 TrendEvo. All Rights Reserved.</div></footer>;
+}
+
+function FooterColumn({ title, links }: { title: string; links: string[] }) { return <div><h2 className="text-sm font-bold">{title}</h2><ul className="mt-4 space-y-2 text-xs text-white/75">{links.map((link) => <li key={link}><a href="#home" className="transition hover:text-white">{link}</a></li>)}</ul></div>; }
