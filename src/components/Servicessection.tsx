@@ -11,7 +11,7 @@ export default function ServicesSection() {
     const [active, setActive] = useState("Facebook");
 
     return (
-        <section id="services" className="bg-[#fafafc] py-20 lg:py-24">
+        <section id="services" className="bg-[#fafafc] py-20 lg:py-28">
             <div className="container px-4 mx-auto max-w-[1400px]">
                 {/* Header Area */}
                 <Reveal className="text-center max-w-3xl mx-auto mb-12">

@@ -10,20 +10,11 @@ export default function FaqSection() {
 
   return (
     <section className="relative overflow-hidden bg-white py-20 lg:py-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-20 -top-24 h-[150px] w-[420px] rotate-[5deg] rounded-[0_0_0_55%] bg-[#fff0e7]"
-      />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-16 -top-16 h-[100px] w-[330px] rotate-[5deg] rounded-[0_0_0_55%] bg-[#ffad78]"
-      />
-
-      <div className="container-px relative z-10 mx-auto max-w-6xl">
+      <div className="container relative z-10 mx-auto max-w-[1400px] px-4">
         <Reveal className="mx-auto max-w-[1200px] text-center">
           <div className="flex flex-col items-center justify-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-500">
               FAQ
             </span>
 
@@ -45,7 +36,7 @@ export default function FaqSection() {
           </p>
         </Reveal>
 
-        <div className="mx-auto mt-10 grid max-w-[850px] gap-3 md:grid-cols-2 md:gap-x-3.5">
+        <div className="mx-auto mt-10 grid max-w-[1400px] gap-3 md:grid-cols-2 md:gap-x-3.5">
           <div className="flex flex-col gap-3">
             {leftFaqs.map((faq, index) => (
               <FaqItem
@@ -92,7 +83,7 @@ function FaqItem({
         className="flex w-full cursor-pointer items-center justify-between gap-4 text-left text-[11px] font-semibold leading-5 outline-none"
         aria-expanded={isOpen}
       >
-        <span>{faq.q}</span>
+        <span className="text-lg">{faq.q}</span>
 
         <svg
           className={`h-3 w-3 shrink-0 transition-transform duration-300 ease-out ${isOpen ? "rotate-180 text-white" : "text-gray-800"
@@ -119,7 +110,7 @@ function FaqItem({
       >
         <div className="overflow-hidden">
           <p
-            className={`pt-2.5 text-[10.5px] leading-[1.5] ${isOpen ? "text-white/90" : "text-ink-500"
+            className={`pt-2.5 text-sm leading-[1.5] ${isOpen ? "text-white/90" : "text-ink-500"
               }`}
           >
             {faq.a}

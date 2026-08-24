@@ -39,7 +39,7 @@ export default function Advantages() {
         aria-hidden
       />
 
-      <div className="container-px relative z-10 mx-auto max-w-6xl">
+      <div className="container relative z-10 mx-auto max-w-[1400px] px-4">
         <Reveal className="mx-auto max-w-2xl text-center">
           <div className="flex flex-col items-center justify-center">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
@@ -65,7 +65,7 @@ export default function Advantages() {
         </Reveal>
 
         <div className="relative mx-auto mt-10 max-w-[1400px]">
-          <div className="pointer-events-none absolute left-1/2 top-69 z-0 hidden -translate-x-1/2 -translate-y-1/2 md:block">
+          <div className="pointer-events-none absolute left-1/2 top-63 z-0 hidden -translate-x-1/2 -translate-y-1/2 md:block">
             <Image
               src="/assets/pattern.svg"
               alt=""

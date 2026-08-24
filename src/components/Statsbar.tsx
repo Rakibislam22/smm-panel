@@ -4,7 +4,7 @@ import { heroStats } from "@/data/content";
 
 export default function StatsBar() {
     return (
-        <section className="bg-[#f8f9fa] py-16 lg:py-20">
+        <section className="bg-[#f8f9fa] py-20 lg:py-28">
             <div className="container px-4 mx-auto grid max-w-[1400px] grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
                 {heroStats.map((s, i) => (
                     <Reveal key={s.label} delay={i * 0.08}>

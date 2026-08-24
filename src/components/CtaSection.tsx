@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 
 export default function CtaSection() {
   return (
-    <section id="contact" className="bg-white py-24 lg:py-32">
+    <section id="contact" className="bg-white py-20 lg:py-28">
       <Reveal className="container px-4 mx-auto max-w-[1400px]">
 
         {/* Main Card Container - No overflow-hidden so the woman can pop out */}

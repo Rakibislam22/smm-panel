@@ -7,7 +7,7 @@ import { growthTimeline } from "@/data/content";
 export default function GrowthTimeline() {
   return (
     <section id="blog" className="bg-white py-20 lg:py-28">
-      <div className="container mx-auto max-w-[1240px] px-4">
+      <div className="container mx-auto max-w-[1400px] px-4">
         <Reveal className="mx-auto max-w-3xl text-center">
           <div className="mb-3 flex flex-col items-center justify-center">
             <span className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-orange-500">
