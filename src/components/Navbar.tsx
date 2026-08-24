@@ -18,44 +18,55 @@ export default function Navbar() {
 
     return (
         <header
-            className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/85 backdrop-blur-md shadow-[0_4px_20px_-8px_rgba(0,0,0,0.12)]" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+                ? "bg-white/80 backdrop-blur-md shadow-sm"
+                : "bg-transparent"
                 }`}
         >
-            <div className="container-px flex items-center justify-between py-4">
+            <div className="container px-4 mx-auto max-w-[1400px] flex items-center justify-between py-4">
+                {/* Logo */}
                 <a href="#home" className="shrink-0">
-                    <div className="rounded-lg bg-white shadow-sm border border-black/5 px-5 py-2.5 font-extrabold tracking-tight text-ink-900">
-                        TREND<span className="text-brand-500">EVO</span>
+                    <div className="rounded-2xl bg-white shadow-sm px-8 py-2.5 font-bold text-lg tracking-wide text-orange-500">
+                        LOGO
                     </div>
                 </a>
 
+                {/* Desktop Nav */}
                 <nav className="hidden lg:flex items-center gap-8">
-                    {navLinks.map((link) => (
+                    {navLinks?.map((link) => (
                         <a
                             key={link.label}
                             href={link.href}
                             onClick={() => setActive(link.label)}
-                            className={`text-[15px] font-medium transition-colors relative py-1 ${active === link.label ? "text-brand-500" : "text-ink-700 hover:text-brand-500"
+                            className={`text-[15px] font-semibold transition-colors ${active === link.label
+                                ? "text-orange-500"
+                                : "text-gray-600 hover:text-orange-500"
                                 }`}
                         >
                             {link.label}
-                            {active === link.label && (
-                                <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-brand-500" />
-                            )}
                         </a>
                     ))}
                 </nav>
 
-                <div className="hidden lg:flex items-center gap-3">
-                    <a href="#signin" className="btn-outline !py-2.5 !px-5 text-sm">
+                {/* Desktop Buttons */}
+                <div className="hidden lg:flex items-center gap-4">
+                    <a
+                        href="#signin"
+                        className="rounded-lg border border-orange-200 bg-white text-orange-500 px-6 py-2 text-sm font-semibold hover:border-orange-500 transition-colors"
+                    >
                         Sign In
                     </a>
-                    <a href="#signup" className="btn-primary !py-2.5 !px-5 text-sm">
+                    <a
+                        href="#signup"
+                        className="rounded-lg bg-gradient-to-r from-orange-400 to-orange-600 text-white px-6 py-2 text-sm font-semibold shadow-md hover:shadow-lg transition-all"
+                    >
                         Sign Up
                     </a>
                 </div>
 
+                {/* Mobile Menu Toggle */}
                 <button
-                    className="lg:hidden text-2xl text-ink-900"
+                    className="lg:hidden text-2xl text-gray-800"
                     onClick={() => setOpen((v) => !v)}
                     aria-label="Toggle menu"
                 >
@@ -63,10 +74,11 @@ export default function Navbar() {
                 </button>
             </div>
 
+            {/* Mobile Menu */}
             {open && (
-                <div className="lg:hidden bg-white border-t border-black/5 shadow-lg">
-                    <div className="container-px py-4 flex flex-col gap-4">
-                        {navLinks.map((link) => (
+                <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+                    <div className="container px-4 py-4 mx-auto flex flex-col gap-4">
+                        {navLinks?.map((link) => (
                             <a
                                 key={link.label}
                                 href={link.href}
@@ -74,16 +86,16 @@ export default function Navbar() {
                                     setActive(link.label);
                                     setOpen(false);
                                 }}
-                                className="text-ink-700 font-medium"
+                                className={`font-semibold ${active === link.label ? "text-orange-500" : "text-gray-600"}`}
                             >
                                 {link.label}
                             </a>
                         ))}
-                        <div className="flex gap-3 pt-2">
-                            <a href="#signin" className="btn-outline flex-1 text-center text-sm !py-2.5">
+                        <div className="flex gap-3 pt-4 border-t border-gray-100">
+                            <a href="#signin" className="flex-1 text-center rounded-lg border border-orange-200 text-orange-500 py-2.5 text-sm font-semibold">
                                 Sign In
                             </a>
-                            <a href="#signup" className="btn-primary flex-1 text-center text-sm !py-2.5">
+                            <a href="#signup" className="flex-1 text-center rounded-lg bg-gradient-to-r from-orange-400 to-orange-600 text-white py-2.5 text-sm font-semibold">
                                 Sign Up
                             </a>
                         </div>
