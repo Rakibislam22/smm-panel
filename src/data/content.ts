@@ -8,10 +8,10 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-    { icon: "📦", value: "321,879", label: "Order Processed" },
-    { icon: "🖥️", value: "6,245", label: "Available Services" },
-    { icon: "👥", value: "8,552", label: "Registered User" },
-    { icon: "🏆", value: "#1", label: "Regional Rank" },
+    { icon: "/assets/order.png", value: "321,879", label: "Order Processed" },
+    { icon: "/assets/service.png", value: "6,245", label: "Available Services" },
+    { icon: "/assets/users.png", value: "8,552", label: "Registered User" },
+    { icon: "/assets/rank.png", value: "#1", label: "Regional Rank" },
 ];
 
 export const platforms = [

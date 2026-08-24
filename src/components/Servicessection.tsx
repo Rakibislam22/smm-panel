@@ -11,33 +11,41 @@ export default function ServicesSection() {
     const [active, setActive] = useState("Facebook");
 
     return (
-        <section id="services" className="bg-white py-20 lg:py-24">
-            <div className="container-px">
-                <Reveal className="text-center max-w-2xl mx-auto mb-14">
-                    <span className="eyebrow">Our Services</span>
-                    <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-ink-900">
-                        Powerful <span className="text-brand-500">SMM Services</span> for Fast Growth
+        <section id="services" className="bg-[#fafafc] py-20 lg:py-24">
+            <div className="container px-4 mx-auto max-w-[1400px]">
+                {/* Header Area */}
+                <Reveal className="text-center max-w-3xl mx-auto mb-12">
+                    <div className="flex flex-col items-center justify-center mb-4">
+                        <span className="text-orange-500 font-medium text-[15px] mb-1">our services</span>
+                        <div className="flex items-center justify-center w-24">
+                            <div className="h-[2px] w-full bg-orange-500 rounded-l-full"></div>
+                            <div className="h-1.5 w-1.5 rounded-full bg-orange-500 mx-1 shrink-0"></div>
+                            <div className="h-[2px] w-full bg-orange-500 rounded-r-full"></div>
+                        </div>
+                    </div>
+                    <h2 className="mt-4 text-[32px] sm:text-[40px] font-bold text-gray-900 tracking-tight leading-tight">
+                        Powerful <span className="text-orange-500">SMM Services</span> for Fast Growth
                     </h2>
-                    <p className="mt-4 text-ink-500 text-[15px]">
-                        Explore our comprehensive range of social media marketing services designed to
-                        help you grow your presence across all major platforms. From Facebook to TikTok,
-                        we&apos;ve got you covered.
+                    <p className="mt-4 text-gray-600 text-[15px] leading-relaxed max-w-2xl mx-auto">
+                        Explore our comprehensive range of social media marketing services designed to help you grow your presence across all major platforms. From Facebook to TikTok. we've got you covered.
                     </p>
                 </Reveal>
 
+                {/* Platforms Grid */}
                 <Reveal delay={0.1}>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
-                        {platforms.map((p) => (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
+                        {platforms?.map((p) => (
                             <button
                                 key={p.label}
                                 onClick={() => setActive(p.label)}
-                                className={`flex items-center gap-2.5 rounded-xl px-4 py-3.5 text-sm font-semibold transition-all border ${active === p.label
-                                        ? "text-white border-transparent shadow-lg shadow-orange-500/25"
-                                        : "bg-brand-50/70 text-ink-900 border-transparent hover:bg-brand-100/70"
-                                    }`}
+                                className={`flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-[14px] font-medium transition-all border ${
+                                    active === p.label
+                                        ? "text-white border-transparent shadow-[0_8px_20px_-6px_rgba(234,88,12,0.4)]"
+                                        : "bg-[#fdfaf7] text-gray-700 border-[#f2e7dc] hover:border-orange-300 hover:bg-orange-50/50"
+                                }`}
                                 style={
                                     active === p.label
-                                        ? { background: "linear-gradient(135deg, #f2892e 0%, #dd4f0c 100%)" }
+                                        ? { background: "linear-gradient(135deg, #f97316 0%, #c2410c 100%)" }
                                         : undefined
                                 }
                             >
@@ -48,27 +56,32 @@ export default function ServicesSection() {
                     </div>
                 </Reveal>
 
+                {/* Main Content Box */}
                 <Reveal delay={0.15}>
-                    <div className="rounded-3xl border border-brand-200/70 p-5 sm:p-8 grid lg:grid-cols-2 gap-8 items-center bg-gradient-to-br from-white to-brand-50/40">
+                    <div className="rounded-[24px] border border-orange-400 p-6 lg:p-10 grid lg:grid-cols-2 gap-10 items-start bg-white">
+                        
+                        {/* Left Image Side */}
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={active + "-img"}
-                                initial={{ opacity: 0, x: -16 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 16 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 1.05 }}
                                 transition={{ duration: 0.35 }}
-                                className="rounded-2xl overflow-hidden bg-gradient-to-br from-brand-100 to-brand-50 aspect-[4/3] flex items-center justify-center relative"
+                                className="rounded-2xl overflow-hidden bg-gradient-to-t from-[#fae8d4] to-transparent aspect-[4/3.5] flex items-center justify-center relative w-full h-full"
                             >
                                 <Image
-                                    src="/assets/service-section-image.png"
+                                    src="/assets/service-section-image.png" 
                                     alt={`${active} marketing services`}
-                                    width={420}
-                                    height={420}
-                                    className="drop-shadow-xl"
+                                    
+                                    width={500}
+                                    height={500}
+                                    className="w-full h-full"
                                 />
                             </motion.div>
                         </AnimatePresence>
 
+                        {/* Right Content Side */}
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={active + "-content"}
@@ -76,35 +89,44 @@ export default function ServicesSection() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -16 }}
                                 transition={{ duration: 0.35 }}
+                                className="flex flex-col justify-center h-full pt-2"
                             >
-                                <h3 className="text-2xl font-extrabold text-brand-500">
+                                <h3 className="text-[26px] font-semibold text-orange-500 tracking-tight">
                                     {active} Marketing Services
                                 </h3>
-                                <p className="mt-3 text-ink-500 text-[15px] leading-relaxed">
-                                    Boost your brand visibility, connect with your ideal audience, and drive
-                                    more traffic, engagement, and sales through strategic {active} marketing
-                                    campaigns.
+                                <p className="mt-3 text-gray-600 text-[14px] leading-[1.6]">
+                                    Boost your brand visibility, connect with your ideal audience, and drive more traffic, engagement, and sales through strategic {active} marketing campaigns.
                                 </p>
 
-                                <ul className="mt-5 space-y-3">
-                                    {facebookServices.map((s, i) => (
-                                        <li key={s.title} className="flex gap-3 text-sm">
-                                            <span className="shrink-0 h-6 w-6 rounded-md bg-gradient-to-br from-brand-500 to-brand-600 text-white text-xs font-bold flex items-center justify-center">
+                                <ul className="mt-6 space-y-4">
+                                    {facebookServices?.map((s, i) => (
+                                        <li key={s.title} className="flex gap-3 text-[14px] items-start">
+                                            {/* Hexagon Badge */}
+                                            <span 
+                                                className="shrink-0 h-[26px] w-[26px] mt-0.5 bg-gradient-to-br from-orange-400 to-orange-600 text-white text-[11px] font-bold flex items-center justify-center shadow-sm"
+                                                style={{ clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)" }}
+                                            >
                                                 {String(i + 1).padStart(2, "0")}
                                             </span>
-                                            <span className="text-ink-700">
-                                                <span className="text-brand-500 font-semibold">{s.title}</span> –{" "}
+                                            <span className="text-gray-600 leading-[1.6]">
+                                                <span className="text-orange-500 font-medium">{s.title}- </span>
                                                 {s.desc}
                                             </span>
                                         </li>
                                     ))}
                                 </ul>
 
-                                <a href="#services" className="btn-primary inline-block mt-7 text-sm">
-                                    View {active} Services
-                                </a>
+                                <div>
+                                    <a
+                                        href="#services"
+                                        className="inline-block mt-8 rounded-lg bg-gradient-to-r from-orange-400 to-orange-700 px-6 py-2.5 text-[14px] font-medium text-white shadow-md hover:shadow-lg transition-all"
+                                    >
+                                        View {active} Services
+                                    </a>
+                                </div>
                             </motion.div>
                         </AnimatePresence>
+
                     </div>
                 </Reveal>
             </div>
