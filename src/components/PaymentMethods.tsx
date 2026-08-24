@@ -1,0 +1,9 @@
+import Image from "next/image";
+import Reveal from "./Reveal";
+import { paymentMethods } from "@/data/content";
+
+const paymentIcons: Record<string, string> = { Visa: "VISA", Mastercard: "MC", SEPA: "SEPA", GPay: "G Pay", ApplePay: "Apple Pay", PayPal: "Pay", Crypto: "BTC" };
+
+export default function PaymentMethods() {
+  return <section id="api" className="relative overflow-hidden bg-white py-20 lg:py-28"><div className="container-px relative mx-auto max-w-6xl text-center"><Reveal><span className="eyebrow">Payment Methods</span><h2 className="mt-4 text-3xl font-extrabold text-ink-900 sm:text-4xl">Multiple <span className="text-brand-500">Payment Methods</span></h2><p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-ink-500">We accept Visa, Mastercard, American Express, PayPal and more, so you can pay with confidence and start growing right away.</p></Reveal><Reveal delay={0.1} className="relative mx-auto mt-10 h-[290px] max-w-4xl sm:h-[390px]"><Image src="/assets/maph.png" alt="Worldwide payment coverage" fill className="object-contain opacity-15" /><div className="absolute inset-x-[8%] top-[36%] h-[55%] rounded-t-full border-2 border-brand-200/70 border-b-0" /><div className="absolute inset-x-[22%] top-[51%] h-[38%] rounded-t-full border-2 border-brand-100 border-b-0" />{paymentMethods.map((method) => <span key={method.name} className="absolute z-10 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[8px] font-extrabold text-ink-700 shadow-lg ring-4 ring-brand-50 sm:h-12 sm:w-12 sm:text-[10px]" style={{ top: method.top, left: method.left }}>{paymentIcons[method.name]}</span>)}<p className="absolute inset-x-0 bottom-1 text-3xl font-extrabold tracking-[0.16em] text-brand-100/60 sm:text-6xl">MULTIPLE PAYMENTS</p></Reveal></div></section>;
+}
