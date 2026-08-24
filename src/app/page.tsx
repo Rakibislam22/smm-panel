@@ -12,7 +12,7 @@ import PaymentMethods from "@/components/PaymentMethods";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-[1520px] overflow-hidden">
+    <div className="">
       <Navbar />
       <main>
         <Hero />
