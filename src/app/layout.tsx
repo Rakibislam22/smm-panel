@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Parkinsans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const parkinsans = Parkinsans({
+  variable: "--font-parkinsans",
   subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${parkinsans.variable} scroll-smooth`}>
       <body className="min-h-full flex flex-col antialiased bg-white text-ink-900">
         {children}
       </body>
